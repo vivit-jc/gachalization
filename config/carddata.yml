@@ -1,21 +1,31 @@
 # -*- coding: utf-8 -*-
 
 - !ruby/object:CardData
-  name: スライム
+  name: 魚
   required_mp: 2
   unlock_level: 0
 
 - !ruby/object:CardData
-  name: 天使
+  name: 貝
   required_mp: 6
   unlock_level: 10
 
 - !ruby/object:CardData
-  name: メデューサ
+  name: 蟹
   required_mp: 12
   unlock_level: 30
 
 - !ruby/object:CardData
-  name: サキュバス
+  name: 小麦
+  required_mp: 21
+  unlock_level: 18
+
+- !ruby/object:CardData
+  name: 米
+  required_mp: 21
+  unlock_level: 18
+
+- !ruby/object:CardData
+  name: とうもろこし
   required_mp: 21
   unlock_level: 18

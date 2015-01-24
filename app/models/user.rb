@@ -1,8 +1,15 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, 
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_one :player
 
-  enum role: %(admin normal)
+
+  def init
+    player = self.create_player
+    player.init
+    return player
+  end
+
 end

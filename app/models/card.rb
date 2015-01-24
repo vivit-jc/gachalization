@@ -4,4 +4,7 @@ class Card < ActiveRecord::Base
     CARDS[self.data_id]
   end
 
+  def name
+    self.data.name
+  end
 end
