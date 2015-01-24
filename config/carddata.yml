@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+
+- !ruby/object:CardData
+  name: スライム
+  required_mp: 2
+  unlock_level: 0
+
+- !ruby/object:CardData
+  name: 天使
+  required_mp: 6
+  unlock_level: 10
+
+- !ruby/object:CardData
+  name: メデューサ
+  required_mp: 12
+  unlock_level: 30
+
+- !ruby/object:CardData
+  name: サキュバス
+  required_mp: 21
+  unlock_level: 18

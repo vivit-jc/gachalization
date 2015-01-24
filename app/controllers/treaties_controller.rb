@@ -1,0 +1,2 @@
+class TreatiesController < ApplicationController
+end
