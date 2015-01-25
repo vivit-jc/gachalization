@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20150125100952) do
   create_table "cards", force: true do |t|
     t.integer  "player_id"
     t.integer  "data_id"
-    t.integer  "level"
-    t.integer  "exp"
-    t.boolean  "sleep"
+    t.integer  "level",      default: 1
+    t.integer  "exp",        default: 0
+    t.boolean  "sleep",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20150125100952) do
     t.integer  "x"
     t.integer  "y"
     t.string   "name"
+    t.string   "comment"
+    t.boolean  "defeated",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

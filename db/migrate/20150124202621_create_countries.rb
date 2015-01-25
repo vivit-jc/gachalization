@@ -5,6 +5,8 @@ class CreateCountries < ActiveRecord::Migration
       t.integer :x
       t.integer :y
       t.string :name
+      t.string :comment
+      t.boolean :defeated, default: false
 
       t.timestamps
     end

@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+span.too_early{
+	color: gray;
+}
+
+div.unknown{
+	float: left;
+	width: 90px;
+	height: 90px;
+	margin: 5px;
+	background: mediumorchid;
+}
+
+div.country{
+	background: lightgray;
+	margin-bottom: 8px;
+}

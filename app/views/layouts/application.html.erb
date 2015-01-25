@@ -7,8 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= flash[:alert] %>
-<%= flash[:notice] %>
+<%= bootstrap_flash %>
 <% if user_signed_in? %>
 <div class="container">
 <div class="row">

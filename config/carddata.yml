@@ -3,29 +3,87 @@
 - !ruby/object:CardData
   name: 魚
   type: :resource
-  unlock_level: 0
+  era: 0
+  rarity: C
 
 - !ruby/object:CardData
   name: 貝  
   type: :resource
-  unlock_level: 10
+  era: 0
+  rarity: C
 
 - !ruby/object:CardData
   name: 蟹
   type: :resource
-  unlock_level: 30
+  era: 0
+  rarity: C
 
 - !ruby/object:CardData
   name: 小麦
   type: :resource
-  unlock_level: 18
+  era: 0
+  rarity: C
 
 - !ruby/object:CardData
   name: 米
   type: :resource
-  unlock_level: 18
+  era: 0
+  rarity: C
 
 - !ruby/object:CardData
   name: とうもろこし
   type: :resource
-  unlock_level: 18
+  era: 0
+  rarity: C
+
+- !ruby/object:CardData
+  name: 剣士
+  type: :army
+  power: 6
+  era: 0
+  rarity: C
+
+- !ruby/object:CardData
+  name: 弓騎兵
+  type: :army
+  power: 6
+  era: 0
+  rarity: C
+
+- !ruby/object:CardData
+  name: 機関銃兵
+  type: :army
+  power: 18
+  era: 2
+  rarity: C
+
+- !ruby/object:CardData
+  name: ICBM
+  type: :army
+  power: 300
+  era: 3
+  rarity: SR
+
+- !ruby/object:CardData
+  name: 漁場
+  type: :building
+  era: 0
+  rarity: C
+
+- !ruby/object:CardData
+  name: 風車
+  type: :building
+  era: 1
+  rarity: C
+
+- !ruby/object:CardData
+  name: 大聖堂
+  type: :building
+  era: 2
+  rarity: C
+
+- !ruby/object:CardData
+  name: ピラミッド
+  type: :building
+  era: 0
+  rarity: SR

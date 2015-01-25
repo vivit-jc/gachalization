@@ -1,0 +1,9 @@
+h1 =@country.name
+p 時代: #{@country.player.era_j}
+
+- @country.player.cards.each do |card|
+  div class="unknown"
+    p ?????
+div class="cardstop"
+
+=link_to "戻る", :root

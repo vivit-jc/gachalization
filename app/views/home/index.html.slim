@@ -4,11 +4,7 @@ div class="container"
     h1 GACHALIZATION
     div class="col-md-8"
       = button_to "ガチャ", action: :gacha, params: {times: 1}
-      - @player.cards.each do |card|
-        div class = "#{card.type}"
-          =card.name
-          br
-          =link_to "改良", :root
+      = render partial: "shared/card", :collection => @player.cards
       div class="cardstop"
   - else
     = link_to "はじめる(ユーザー登録)", new_user_registration_path

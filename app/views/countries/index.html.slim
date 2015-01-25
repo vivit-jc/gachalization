@@ -1,0 +1,13 @@
+h1 文明一覧
+- @countries.each do |country|
+  div class="country"
+    =link_to country.name, country_path(country)
+    br
+    =country_comment(country)
+    br
+    - if(country == @player.country)
+      | あなたの文明です
+    - else
+      | あなたの文明との距離: #{country.distance(@player.country)}
+
+=link_to "戻る", :root
