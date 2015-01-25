@@ -2,10 +2,10 @@ class CreateManagements < ActiveRecord::Migration
   def change
     create_table :managements do |t|
       t.references :player
-      t.integer :exp
-      t.integer :pt
-      t.integer :max
-      t.integer :damage
+      t.integer :exp, default: 0
+      t.integer :pt, default: 6
+      t.integer :max, default: 6
+      t.integer :damage, default: 0
 
       t.timestamps
     end

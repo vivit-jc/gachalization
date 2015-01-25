@@ -1,0 +1,9 @@
+H1 sidebar
+div
+  | 内政力: #{@player.management.pt}/#{@player.management.actual_max}(最大#{@player.management.max},ダメージ#{@player.management.damage})
+  br
+  | exp: #{@player.management.exp}/#{(@player.management.max+1)/2}
+  br
+  | 資金: #{@player.money.pt} 時代: #{@player.era}
+  br
+  | カード: #{@player.cards.size}/#{@player.card_limit} 資源発見数: #{@player.catalogs.size}/#{all_number_of_resource}

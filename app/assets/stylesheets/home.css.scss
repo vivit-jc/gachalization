@@ -1,3 +1,31 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.cardstop{
+	clear: both;
+}
+
+div.resource {
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	background: lightgreen;
+}
+
+div.army {
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	background: salmon;
+}
+
+div.building {
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	background: lightskyblue;
+}

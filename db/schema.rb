@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124202730) do
+ActiveRecord::Schema.define(version: 20150125100952) do
 
   create_table "cards", force: true do |t|
     t.integer  "player_id"
@@ -56,10 +56,17 @@ ActiveRecord::Schema.define(version: 20150124202730) do
 
   create_table "managements", force: true do |t|
     t.integer  "player_id"
-    t.integer  "exp"
-    t.integer  "pt"
-    t.integer  "max"
-    t.integer  "damage"
+    t.integer  "exp",        default: 0
+    t.integer  "pt",         default: 6
+    t.integer  "max",        default: 6
+    t.integer  "damage",     default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "money", force: true do |t|
+    t.integer  "player_id"
+    t.integer  "pt",         default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

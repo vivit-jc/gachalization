@@ -1,6 +1,6 @@
 class CardData
 
 attr_accessor :id
-attr_reader :name
+attr_reader :name, :type
 
 end

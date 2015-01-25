@@ -7,6 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= flash[:alert] %>
+<%= flash[:notice] %>
+<% if user_signed_in? %>
+<div class="container">
+<div class="row">
+<div class="col-md-8">
 <%= yield %>
+</div>
+<div class="col-md-4">
+<%= render partial: "shared/sidebar" %>
+</div>
+</div>
+</div>
+<% else %>
+
+<%= yield %>
+
+<% end %>
 </body>
 </html>

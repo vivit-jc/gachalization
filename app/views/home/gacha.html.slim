@@ -1,6 +1,7 @@
+p 新しいカードを入手しました！
 - @cards_gotten.each do |card|
-  =card.name
-  | を入手
-  br
+  div class="#{card.type}"
+    =card.name
+div class="cardstop"
 
 = link_to "戻る", :root
