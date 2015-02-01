@@ -24,8 +24,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'slim-rails'
+
 gem 'twitter-bootstrap-rails'
+
 gem 'devise'
+
+group :production do
+  gem 'mysql2'
+end
 
 group :development,:test do
   gem 'spring'
