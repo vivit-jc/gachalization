@@ -1,11 +1,26 @@
 
 div class="container"
   - if user_signed_in?
-    h1 GACHALIZATION
-    div class="col-md-8"
-      = button_to "ガチャ", action: :gacha, params: {times: 1}
-      = render partial: "shared/card", :collection => @player.cards
-      div class="cardstop"
+    - if current_user.player
+      h1 GACHALIZATION
+      div class="col-md-8"
+        = button_to "ガチャ", action: :gacha, params: {times: 1}
+        = render partial: "shared/card", :collection => @player.cards
+        div class="cardstop"
+    - else
+      h1 初期設定
+      =form_tag(:init_players) do 
+        div class="field"
+          | プレイヤー名(必須)
+          =text_field_tag :player_name
+        div class="field"
+          | 文明の名前(必須)
+          =text_field_tag :country_name
+        div class="field"
+          | コメント
+          =text_field_tag :comment
+        div class="action"
+          =submit_tag
   - else
     = link_to "はじめる(ユーザー登録)", new_user_registration_path
     br

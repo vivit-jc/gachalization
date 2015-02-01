@@ -7,9 +7,8 @@ class User < ActiveRecord::Base
 
 
   def init
-    player = self.create_player
+    player = self.create_player(name: "temp#{rand(100000)}")
     player.init
-    return player
   end
 
 end

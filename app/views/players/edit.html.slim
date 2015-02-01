@@ -1,4 +1,9 @@
 h2 プレイヤー情報編集
+- if @player.errors.count > 0
+  b ERROR
+  ul
+  - @player.errors.full_messages.each do |message|
+    li =message
 
 =form_for(@player) do |f|
   div class="field"

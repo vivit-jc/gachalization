@@ -15,7 +15,9 @@
 <%= yield %>
 </div>
 <div class="col-md-4">
+<% if @player %>
 <%= render partial: "shared/sidebar" %>
+<% end %>
 </div>
 </div>
 </div>

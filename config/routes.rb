@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     get :debug, on: :collection
   end
 
-  resources :players, only: [:edit, :update]
+  resources :players, only: [:edit, :update] do
+    post :init, on: :collection
+  end
 
   resources :countries, only: [:index,:show,:edit,:update]
 

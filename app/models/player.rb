@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Player < ActiveRecord::Base
+  validates_presence_of :name
+  validates_uniqueness_of :name
   belongs_to :user
   has_many :cards
   has_one :management
@@ -13,7 +15,7 @@ class Player < ActiveRecord::Base
   def init
     self.create_management(max: 6, pt: 6)
     self.create_money(pt: 100)
-    self.create_country
+    self.create_country(name: "temp#{rand(100000)}")
     self.country.init
   end
 

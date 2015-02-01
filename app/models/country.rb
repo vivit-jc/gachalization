@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Country < ActiveRecord::Base
+  validates_presence_of :name
+  validates_uniqueness_of :name
   belongs_to :player
 
   def init
