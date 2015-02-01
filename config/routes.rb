@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get :debug, on: :collection
   end
 
+  resources :players, only: [:edit, :update]
+
   resources :countries, only: [:index,:show,:edit,:update]
 
   resources :trades, only: [:index, :create]

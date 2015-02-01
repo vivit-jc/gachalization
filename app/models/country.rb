@@ -27,6 +27,6 @@ class Country < ActiveRecord::Base
   end
 
   def distance(opp_country)
-    Math::sqrt((self.x - opp_country.x) ** 2 + (self.y - opp_country.y) ** 2)
+    (Math::sqrt((self.x - opp_country.x) ** 2 + (self.y - opp_country.y) ** 2)).round(2)
   end
 end

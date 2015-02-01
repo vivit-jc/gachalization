@@ -1,8 +1,10 @@
-H1 sidebar
 div
   =link_to "ログアウト", destroy_user_session_path, :method => :delete
   br
-  b #{@player.country.name}  
+  b #{@player.name}
+  =link_to "変更", edit_player_path(@player)
+  br
+  b #{@player.country.name}
   =link_to "変更", edit_country_path(@player.country)
   br
   i =country_comment(@player.country)
