@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :private_log do
     text "MyString"
-read false
+    read false
   end
 
 end

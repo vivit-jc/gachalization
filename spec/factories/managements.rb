@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :management do
-    exp 1
-pt 1
-max 1
-damage 1
+    exp 0
+    pt 5
+    max 5
+    damage 0
   end
 
 end
