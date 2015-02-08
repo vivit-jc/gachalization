@@ -5,8 +5,14 @@ div class="container"
       h1 GACHALIZATION
       div class="col-md-8"
         = button_to "ガチャ", action: :gacha, params: {times: 1}
+        - max_addable_card_size.times do |i|
+          - if(i > 0 && i%5 == 0)
+            = button_to "#{i}連ガチャ", {action: :gacha, params: {times: i}}
+        - if (max_addable_card_size > 1)
+          = button_to "#{max_addable_card_size}連ガチャ", action: :gacha, params: {times: max_addable_card_size}
+        div class="clearfloat"
         = render partial: "shared/card", :collection => @player.cards
-        div class="cardstop"
+        div class="clearfloat"
     - else
       h1 初期設定
       =form_tag(:init_players) do 

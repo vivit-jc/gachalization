@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.cardstop{
+div.clearfloat{
 	clear: both;
+}
+
+form.button_to {
+	float: left;
 }
 
 div.resource {
