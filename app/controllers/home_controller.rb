@@ -11,7 +11,7 @@ class HomeController < ApplicationController
 
   def debug
     @player.maximize_management
-    @player.cards.destroy_all
+    #@player.cards.destroy_all
     redirect_to :root
   end
 end

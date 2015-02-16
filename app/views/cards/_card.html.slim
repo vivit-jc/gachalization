@@ -1,0 +1,13 @@
+div class = "#{card.type}"
+  span class="#{card.era_status}" 
+    =card.name 
+  | Lv.#{card.level} (#{card.exp}/#{[20,60,100][card.level-1]})
+  br
+  - if(card.type == :army)
+    span pow #{card.power}
+  - if(params[:action] == "improve" && @target.id != card.id)
+    div =check_box_tag 'card_id[]', card.id
+  - if(card.era_status == "suitable" && params[:action] != "improve")
+    br
+    =link_to "改良", improve_card_path(card.id)
+    =link_to "交易", trades_path, method: :post, params: {id: card.id}

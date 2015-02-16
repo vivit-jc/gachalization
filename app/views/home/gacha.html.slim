@@ -1,5 +1,5 @@
 p 新しいカードを入手しました！
-= render partial: "shared/card", :collection => @cards_gotten
+= render partial: :card, :collection => @cards_gotten
 div class="clearfloat"
 
 = link_to "戻る", :root

@@ -14,6 +14,11 @@ Rails.application.routes.draw do
 
   resources :trades, only: [:index, :create]
 
+  resources :cards, only: [] do
+    get  :improve,   on: :member
+    post :improving, on: :collection
+  end
+
   root to: "home#index"
 
 end

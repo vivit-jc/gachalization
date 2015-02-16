@@ -3,8 +3,9 @@ FactoryGirl.define do
     name "MyString"
   end
 
-  factory :preset_player do
+  factory :preset_player, class: :player do
     name "preset"
+    association :user
     management FactoryGirl.create(:management)
     
   end

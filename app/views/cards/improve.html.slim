@@ -1,0 +1,13 @@
+h1 改良
+
+div
+  p このカードを改良します
+  = render partial: @target
+  div class="clearfloat"
+div
+  p 改良に使うカードを選択してください
+  = form_tag :improving_cards, class: "improve"
+    = render partial: :card, collection: @others
+    = hidden_field_tag "target", @target.id
+    div class="clearfloat"
+    = submit_tag "改良"
