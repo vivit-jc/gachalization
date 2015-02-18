@@ -4,10 +4,11 @@ FactoryGirl.define do
   end
 
   factory :preset_player, class: :player do
-    name "preset"
+    sequence(:name) {|n| "preset#{n}" }
     association :user
-    management FactoryGirl.create(:management)
-    
+    management
+    country
+    money
   end
 
 end
