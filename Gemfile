@@ -37,6 +37,9 @@ group :development,:test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'turnip'
 end
 
 

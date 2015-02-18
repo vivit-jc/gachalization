@@ -2,7 +2,18 @@
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
+
+# capybara/turnip用
+Dir.glob("spec/**/*steps.rb") { |f| load f, true }
+require 'capybara/dsl'
+require 'capybara/rspec'
+require 'capybara/webkit'
 require 'rspec/rails'
+require 'turnip'
+require 'turnip/capybara'
+require 'rspec/rails'
+
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
