@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe HomeController, :type => :controller do
 
   before do
-    @user = FactoryGirl.create(:user)
     @player = FactoryGirl.create(:preset_player)
+    @user = @player.user
     sign_in :user, @user
   end
 
