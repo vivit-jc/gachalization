@@ -18,7 +18,7 @@ RSpec.describe TradesController, :type => :controller do
     end
 
     it "交易に出したカードは自分で参照できない" do
-      post 'improving', {card_id: 1, value: 20}
+      post 'create', {card_id: 1, value: 20}
       expect(assigns[:player].cards.size).to eq(2)
     end
   end

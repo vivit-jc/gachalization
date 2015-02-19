@@ -22,6 +22,10 @@ class CardsController < ApplicationController
     redirect_to :root, notice: "改良しました"
   end
 
+  def trade
+    @target = Card.find(params[:id])
+  end
+
 private
 
   def validate_cards_owner(cards)

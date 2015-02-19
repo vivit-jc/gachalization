@@ -36,6 +36,7 @@ class Card < ActiveRecord::Base
   end
 
   def era_status
+    return "suitable" unless(self.player)
     return "too_early" if(self.era > self.player.era)
     "suitable"
   end

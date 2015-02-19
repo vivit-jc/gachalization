@@ -3,7 +3,7 @@ class CreateTrades < ActiveRecord::Migration
     create_table :trades do |t|
       t.references :player
       t.integer :card_id
-      t.integer :value
+      t.integer :price
 
       t.timestamps
     end

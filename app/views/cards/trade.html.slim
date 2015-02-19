@@ -1,0 +1,9 @@
+h1 カードを交易に出す
+
+= render partial: @target
+
+=form_tag(:trades) do 
+  p 価格
+  =text_field_tag :price
+  =hidden_field_tag "card_id", @target.id
+  =submit_tag "交易に出す"

@@ -16,14 +16,21 @@ step ":page にアクセス" do |page|
   visit "http://localhost/#{page}"
 end
 
-# テストの準備に使う
-step "カード :card を追加" do |card|
+step "■カード :card を追加" do |card|
   @player.cards.create(data_id: card_name_to_data_id(card))
 end
 
-step "カード :card のリンク :text をクリック" do |card,text|
-  within("div."+card_name_to_data(card).type.to_s) do
-    click_link text
+step "カード :card を持っている" do |card|
+  card = card_name_to_data(card)
+  within("div.cards")  do
+    expect(page).to have_content(card.name)
+  end
+end
+
+step "カード :card を持っていない" do |card|
+  card = card_name_to_data(card)
+  within("div.cards") do
+    expect(page).not_to have_content(card.name)
   end
 end
 
@@ -35,11 +42,23 @@ step 'ボタン :text をクリック' do |text|
   click_button text
 end
 
+step 'div :name に :text と表示される' do |name, text|
+  within("div.#{name}") do
+    expect(page).to have_content(text)
+  end
+end
+
+step 'div :name のリンク :text をクリック' do |name, text|
+  within("div.#{name}") do
+    click_link text
+  end
+end
+
 step ":space に :value を入力" do |space,value|
   fill_in space, with: value
 end
 
-step "画面にユーザ名 :user が表示されること" do |user|
+step "画面にユーザ名 :user が表示される" do |user|
   expect(page).to have_content(user)
 end
 

@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   resources :countries, only: [:index,:show,:edit,:update]
 
-  resources :trades, only: [:index, :create]
+  resources :trades, except: [:new] do
+    post :buy, on: :member
+  end
 
   resources :cards, only: [] do
     get  :improve,   on: :member
