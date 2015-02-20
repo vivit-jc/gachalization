@@ -41,6 +41,10 @@ class Card < ActiveRecord::Base
     "suitable"
   end
 
+  def to_trade
+    Trade.find_by(card_id: self.id)
+  end
+
   def name
     self.data.name
   end

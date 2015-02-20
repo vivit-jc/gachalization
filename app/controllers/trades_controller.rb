@@ -3,6 +3,8 @@
 class TradesController < ApplicationController
 before_action :authenticate_user!
 before_action :preparing
+include TradesHelper
+
 
   def index
     @trades = Trade.all
@@ -14,17 +16,23 @@ before_action :preparing
     redirect_to :root, notice: "カードを交易に出しました"
   end
 
-  def delete
-
+  def destroy
+    trade = Trade.find(params[:id])
+    Card.find(trade.card_id).update_attribute(:player_id, @player.id)
+    trade.destroy
+    redirect_to :root
   end
 
 
   def edit
-
+    @trade = Trade.find(params[:id])
   end
 
   def update
-
+    trade_params = params.require(:trade).permit(:price)
+    @trade = Trade.find(params[:id])
+    @trade.update(trade_params)
+    redirect_to :root
   end
 
   def buy

@@ -38,13 +38,19 @@ step "リンク :text をクリック" do |text|
   click_link text
 end
 
-step 'ボタン :text をクリック' do |text|
+step ':text ボタンをクリック' do |text|
   click_button text
 end
 
 step 'div :name に :text と表示される' do |name, text|
   within("div.#{name}") do
     expect(page).to have_content(text)
+  end
+end
+
+step 'div :name に :text と表示されない' do |name, text|
+  within("div.#{name}") do
+    expect(page).not_to have_content(text)
   end
 end
 
@@ -58,10 +64,6 @@ step ":space に :value を入力" do |space,value|
   fill_in space, with: value
 end
 
-step "画面にユーザ名 :user が表示される" do |user|
-  expect(page).to have_content(user)
-end
-
 step "プリセットユーザーを追加" do
   @player = FactoryGirl.create(:preset_player)
 end
@@ -72,6 +74,6 @@ step 'ログインする' do
   send ":text と表示される", "Log in"
   fill_in 'user_email', with: 'abc@example.com'
   fill_in 'user_password', with: 'abcabcabc'
-  send "ボタン :text をクリック", "Log in"
+  send ":text ボタンをクリック", "Log in"
 
 end

@@ -1,0 +1,5 @@
+=render partial: @trade.to_card
+p 現在の取引価格: #{@trade.price}
+=form_for @trade do |f|
+  =f.number_field :price
+  =f.submit "修正"
