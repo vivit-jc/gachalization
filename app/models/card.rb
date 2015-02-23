@@ -1,5 +1,6 @@
 class Card < ActiveRecord::Base
   belongs_to :player
+  has_one :trade
 
   def data
     CARDS[self.data_id]
@@ -39,10 +40,6 @@ class Card < ActiveRecord::Base
     return "suitable" unless(self.player)
     return "too_early" if(self.era > self.player.era)
     "suitable"
-  end
-
-  def to_trade
-    Trade.find_by(card_id: self.id)
   end
 
   def name

@@ -4,7 +4,7 @@ class CreateTrades < ActiveRecord::Migration
       t.references :player
       t.integer :card_id
       t.integer :price
-
+      t.boolean :closed, default: false
       t.timestamps
     end
   end

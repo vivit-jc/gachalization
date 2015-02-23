@@ -1,7 +1,5 @@
 class Trade < ActiveRecord::Base
   belongs_to :player
+  belongs_to :card
 
-  def to_card
-    Card.find(self.card_id)
-  end
 end

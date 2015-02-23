@@ -1,0 +1,10 @@
+- card = trade.card
+div class = "#{card.type}"
+  span class="#{card.era_status}" 
+    =card.name 
+  | Lv.#{card.level} (#{card.exp}/#{[20,60,100][card.level-1]})
+  br
+  - if(card.type == :army)
+    span pow #{card.power}
+  p 価格: #{trade.price}
+  = button_to "購入", buy_trade_path(trade)

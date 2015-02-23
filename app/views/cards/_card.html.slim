@@ -6,10 +6,9 @@ div class = "#{card.type}"
   - if(card.type == :army)
     span pow #{card.power}
   - unless(card.player)
-    - trade = card.to_trade
-    p 価格: #{trade.price}
-    =link_to "修正", edit_trade_path(trade)
-    =link_to "キャンセル", trade_path(trade), method: :delete
+    p 価格: #{card.trade.price}
+    =link_to "修正", edit_trade_path(card.trade)
+    =link_to "キャンセル", trade_path(card.trade), method: :delete
   - else
     - if(params[:action] == "improve" && @target.id != card.id)
       div =check_box_tag 'card_id[]', card.id

@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20150125100952) do
     t.integer  "player_id"
     t.integer  "card_id"
     t.integer  "price"
+    t.boolean  "closed",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
