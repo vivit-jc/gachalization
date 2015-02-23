@@ -1,15 +1,25 @@
+# encoding: utf-8
+
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the TradesHelper. For example:
-#
-# describe TradesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe TradesHelper, :type => :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "verify_creating" do
+    it "自分のでないカードを交易に出そうとしたらエラー" do
+      pending
+    end
+    it "交易枠を既に一杯エラー" do
+      pending
+    end
+  end
+
+  describe "verify_buying" do
+    it "資金が足りないエラー" do
+      pending
+    end
+    it "自分のカードは買えないエラー" do
+      pending
+    end
+  end
+
 end

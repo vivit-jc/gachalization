@@ -5,9 +5,8 @@ before_action :authenticate_user!
 before_action :preparing
 include TradesHelper
 
-
   def index
-    @trades = Trade.where(closed: false)
+    @trades = Trade.all
   end
 
   def create

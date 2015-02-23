@@ -15,7 +15,9 @@ div class="container"
           = render partial: :card, collection: @player.cards
         div class="clearfloat"
         div class="trades"
-          = render partial: :card, collection: trading_cards
+          hr
+          p 交易所に出しているカード
+          = render partial: :trade, collection: @player.trades
     - else
       = render partial: "shared/init"
   - else

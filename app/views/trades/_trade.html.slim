@@ -7,4 +7,8 @@ div class = "#{card.type}"
   - if(card.type == :army)
     span pow #{card.power}
   p 価格: #{trade.price}
-  = button_to "購入", buy_trade_path(trade)
+  - if(trade.player == @player)
+    =link_to "修正", edit_trade_path(card.trade)
+    =link_to "キャンセル", trade_path(card.trade), method: :delete
+  - else
+    = button_to "購入", buy_trade_path(trade)
