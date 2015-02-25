@@ -40,6 +40,8 @@ group :development,:test do
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'turnip'
+  gem 'guard-rspec', require: false
+  gem 'terminal-notifier-guard', '~> 1.5.3'
 end
 
 

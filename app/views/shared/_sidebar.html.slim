@@ -1,5 +1,5 @@
 H2 sidebar
-div
+div class="sidebar"
   =link_to "ログアウト", destroy_user_session_path, :method => :delete
   br
   b #{@player.name}
@@ -10,7 +10,7 @@ div
   br
   i =country_comment(@player.country)
   br
-  =link_to "交易 ", :root
+  =link_to "交易 ", :trades
   =link_to "文明 ", :countries
   =link_to "書簡 ", :letters
   br
@@ -18,7 +18,8 @@ div
   br
   | exp: #{@player.management.exp}/#{(@player.management.max+1)/2}
   br
-  | 資金: #{@player.money.pt} 時代: #{@player.era_j}
+  span class="money" 資金: #{@player.money.pt} 
+  span class="era" 時代: #{@player.era_j}
   br
   | カード: #{@player.cards.size}/#{@player.card_limit} 資源発見数: #{@player.catalogs.size}/#{all_number_of_resource}
   br

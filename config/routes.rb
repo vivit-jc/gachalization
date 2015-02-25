@@ -12,13 +12,16 @@ Rails.application.routes.draw do
 
   resources :countries, only: [:index,:show,:edit,:update]
 
-  resources :trades, only: [:index, :create]
+  resources :trades, except: [:new] do
+    post :buy, on: :member
+  end
 
   resources :letters, only: [:index,:show,:new,:create]
 
   resources :cards, only: [] do
     get  :improve,   on: :member
     post :improving, on: :collection
+    get  :trade,     on: :member
   end
 
   root to: "home#index"

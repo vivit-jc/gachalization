@@ -1,0 +1,13 @@
+h1 初期設定
+=form_tag(:init_players) do 
+  div class="field"
+    | プレイヤー名(必須)
+    =text_field_tag :player_name
+  div class="field"
+    | 文明の名前(必須)
+    =text_field_tag :country_name
+  div class="field"
+    | コメント
+    =text_field_tag :comment
+  div class="action"
+    =submit_tag

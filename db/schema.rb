@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150125100952) do
     t.integer  "opp_id"
     t.text     "text"
     t.boolean  "read"
+    t.boolean  "treaty"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,7 +92,8 @@ ActiveRecord::Schema.define(version: 20150125100952) do
   create_table "trades", force: true do |t|
     t.integer  "player_id"
     t.integer  "card_id"
-    t.integer  "value"
+    t.integer  "price"
+    t.boolean  "closed",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

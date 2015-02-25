@@ -1,0 +1,14 @@
+- card = trade.card
+div class = "#{card.type}"
+  span class="#{card.era_status}" 
+    =card.name 
+  | Lv.#{card.level} (#{card.exp}/#{[20,60,100][card.level-1]})
+  br
+  - if(card.type == :army)
+    span pow #{card.power}
+  p 価格: #{trade.price}
+  - if(trade.player == @player)
+    =link_to "修正", edit_trade_path(card.trade)
+    =link_to "キャンセル", trade_path(card.trade), method: :delete
+  - else
+    = button_to "購入", buy_trade_path(trade)

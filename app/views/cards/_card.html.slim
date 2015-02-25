@@ -7,7 +7,10 @@ div class = "#{card.type}"
     span pow #{card.power}
   - if(params[:action] == "improve" && @target.id != card.id)
     div =check_box_tag 'card_id[]', card.id
-  - if(card.era_status == "suitable" && params[:action] != "improve")
+  - if(params[:action] != "improve")
     br
-    =link_to "改良", improve_card_path(card.id)
-    =link_to "交易", trades_path, method: :post, params: {id: card.id}
+    - if(card.era_status == "suitable")
+      =link_to "改良", improve_card_path(card.id)
+    - else
+      s 改良
+    =link_to "交易", trade_card_path(card)
