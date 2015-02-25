@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :trades, only: [:index, :create]
 
+  resources :letters, only: [:index,:show,:new,:create]
+
   resources :cards, only: [] do
     get  :improve,   on: :member
     post :improving, on: :collection
