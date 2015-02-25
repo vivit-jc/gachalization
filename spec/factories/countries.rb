@@ -2,7 +2,6 @@ FactoryGirl.define do
   factory :country do
     x 1
     y 1
-    name "MyString"
+    sequence(:name) {|n| "country#{n}" }
   end
-
 end

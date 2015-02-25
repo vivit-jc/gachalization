@@ -11,7 +11,6 @@ require 'capybara/webkit'
 require 'rspec/rails'
 require 'turnip'
 require 'turnip/capybara'
-require 'rspec/rails'
 
 
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -44,7 +43,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
   config.include Devise::TestHelpers, type: :controller
-
+  config.include CardsHelper
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
