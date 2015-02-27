@@ -5,7 +5,7 @@ class CreateLetters < ActiveRecord::Migration
       t.integer :opp_id
       t.text :text
       t.boolean :read
-      t.boolean :treaty
+      t.string :ltype
 
       t.timestamps
     end

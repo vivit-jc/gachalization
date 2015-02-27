@@ -8,30 +8,28 @@
 
   シナリオ: 書簡を出す
     もし div sidebar のリンク 書簡 をクリック
-    ならば "letter/index" を表示する
+    ならば "/letters" を表示する
     もし リンク 書簡を作成 をクリック
-    ならば "letter/new" を表示する
+    ならば "/letters/new" を表示する
     もし メニューから country2 を選択
     かつ text に texttexttext を入力
-    かつ ラジオボタンから letter を選択
+    かつ メニューから 書簡 を選択
     かつ 送信 ボタンをクリック
-    ならば "letter/index" を表示する
-    かつ texttexttext が表示される #送信済み書簡が表示されることを確認
+    ならば "/letters" を表示する
+    #送信済み書簡が表示されることを確認
+    かつ texttexttext と表示される
 
   シナリオ: 書簡を読む
-    pending
-
+    前提 プレイヤー 2 が書簡を送る
+    もし div sidebar のリンク 書簡 をクリック
+    
   シナリオ: 相互通商条約の提案を出す
-    pending
-
+    
   シナリオ: 条約の提案を出す
-    pending
-
+    
   シナリオ: 条約を許諾する
-    pending
-
+    
   シナリオ: カードを譲渡する
-    pending
-
+    
   シナリオ: 譲渡されたカードを受け取る
-    pending
+    

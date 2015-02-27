@@ -1,0 +1,15 @@
+H1 書簡作成
+
+= form_tag :letters do
+  div
+    span 宛先
+    = select_tag :country_id, options_for_select(@countries)
+  div
+    span タイプ
+    = select_tag :type, options_for_select([["書簡","letter"],["条約の提案","treaty"],["通商条約の提案","treaty_of_commerce"],["送金","send_money"],["カードを送る","send_card"]])
+
+  div
+    p 内容
+    = text_area_tag :text, "", size: "70x6"
+  div
+    = submit_tag "送信"

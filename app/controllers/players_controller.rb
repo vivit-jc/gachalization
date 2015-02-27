@@ -6,7 +6,6 @@ class PlayersController < ApplicationController
 
 def init
   if(params[:player_name] == "" || params[:country_name] == "")
-    p params[:player_name],params[:country_name]
     redirect_to :root, alert: "未入力項目があります"
     return
   end

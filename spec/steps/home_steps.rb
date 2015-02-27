@@ -64,6 +64,14 @@ step ":space に :value を入力" do |space,value|
   fill_in space, with: value
 end
 
+step "メニューから :text を選択" do |text|
+  select text
+end
+
+step "ラジオボタンから :text を選択" do |text|
+  choose text
+end
+
 step "資金が :value である" do |value|
   within("span.money") do
     expect(page).to have_content(value)
