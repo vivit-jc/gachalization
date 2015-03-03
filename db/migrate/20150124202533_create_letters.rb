@@ -4,7 +4,7 @@ class CreateLetters < ActiveRecord::Migration
       t.integer :player_id
       t.integer :opp_id
       t.text :text
-      t.boolean :read
+      t.boolean :read, default: false
       t.string :ltype
 
       t.timestamps

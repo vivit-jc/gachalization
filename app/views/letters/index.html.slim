@@ -3,8 +3,10 @@ H1 書簡
 br
 =link_to "戻る", :root
 
-- @given_letters.each_with_index do |letter,i|
-  div #{@sent_countries[i]}| #{letter.text}
-
-- @sent_letters.each_with_index do |letter,i|
-  div #{@given_countries[i]}| #{letter.text}
+- @letters.each do |letter,country|
+  div 
+    - unless letter.read
+      | new|
+    | #{country}| #{letter.text}| #{letter.created_at}
+    - if responded?(letter)
+      response_link(letter)

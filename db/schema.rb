@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150125100952) do
     t.integer  "player_id"
     t.integer  "opp_id"
     t.text     "text"
-    t.boolean  "read"
+    t.boolean  "read",       default: false
     t.string   "ltype"
     t.datetime "created_at"
     t.datetime "updated_at"

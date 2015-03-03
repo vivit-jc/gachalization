@@ -69,10 +69,12 @@ step "メニューから :text を選択" do |text|
 end
 
 step "メニュー :name から :text を選択" do |name,text|
-  binding.pry
-  within("div.#{name}") do
-    select text
-  end
+  select text, from: name
+end
+
+step "メニュー :name からプレイヤー :id の国を選択" do |name,id|
+  text = Player.find(id).country.name
+  select text, from: name
 end
 
 step "ラジオボタンから :text を選択" do |text|
@@ -105,4 +107,8 @@ end
 
 step "pending" do
   pending "あとでやる"
+end
+
+step "p :text" do |text|
+  p eval(text)
 end
