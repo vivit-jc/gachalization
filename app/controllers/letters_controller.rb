@@ -3,7 +3,9 @@ before_action :authenticate_user!
 before_action :preparing
 
   def index
-    pid = @player.id 
+    pid = @player.id
+    @sent_letters = Letter.where(player_id: pid)
+    @given_letters = Letter.where(opp_id: pid)
     @given_countries = Country.where(id: @sent_letters.map{|l|l.opp_id}).pluck(:name)
     @sent_countries = Country.where(id: @given_letters.map{|l|l.player_id}).pluck(:name)
   end

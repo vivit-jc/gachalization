@@ -68,6 +68,13 @@ step "メニューから :text を選択" do |text|
   select text
 end
 
+step "メニュー :name から :text を選択" do |name,text|
+  binding.pry
+  within("div.#{name}") do
+    select text
+  end
+end
+
 step "ラジオボタンから :text を選択" do |text|
   choose text
 end
