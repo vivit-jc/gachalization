@@ -7,6 +7,6 @@ br
   div 
     - unless letter.read
       | new|
-    | #{country}| #{letter.text}| #{letter.created_at}
+    | #{country}| #{converted_text(letter)}| #{letter.created_at}
     - if responded?(letter)
       response_link(letter)
