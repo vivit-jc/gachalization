@@ -34,7 +34,20 @@ after_action  :mark_letter_read, only: [:index]
 
   def create
     opp_id = Country.find(params[:country_id]).player.id
-    Letter.create(player_id: @player.id, opp_id: opp_id, text: params[:text], ltype: params[:type])
+    text = params[:type] == "send_card" ? params[:card_id] : params[:text]
+    Letter.create(player_id: @player.id, opp_id: opp_id, text: text, ltype: params[:type])
+    redirect_to :letters
+  end
+
+  def accept
+    redirect_to :letters
+  end
+
+  def reject
+    redirect_to :letters
+  end
+
+  def open_present
     redirect_to :letters
   end
 end

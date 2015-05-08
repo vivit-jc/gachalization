@@ -5,6 +5,7 @@ class CreateLetters < ActiveRecord::Migration
       t.integer :opp_id
       t.text :text
       t.boolean :read, default: false
+      t.boolean :accepted
       t.string :ltype
 
       t.timestamps

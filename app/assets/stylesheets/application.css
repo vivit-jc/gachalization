@@ -30,3 +30,15 @@ div.country{
 	background: lightgray;
 	margin-bottom: 8px;
 }
+
+thead tr {
+	background-color: darkgray;
+}
+ 
+tbody tr {
+	background-color: white;
+}
+ 
+tbody tr:nth-child(odd) { /* 奇数番目の指定*/
+	background-color: lightgray;
+}

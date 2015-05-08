@@ -16,6 +16,21 @@ step '■プレイヤー :id が資金 :value を送金' do |id,value|
   Letter.create(player_id: id, opp_id: 1, text: value, ltype: "send_money")
 end
 
+step '■プレイヤー :id がカード :name を送付' do |id,name|
+  card = Card.create(player_id: id, data_id: card_name_to_data_id(name))
+  Letter.create(player_id: id, opp_id: 1, text: card.id, ltype: "send_card")
+end
+
+step '●プレイヤー :id が条約 :name の提案を受けている' do |id,name|
+  l = Letter.find_by(opp_id: id, ltype: "treaty", text: name)
+  expect(l).to be_truthy
+end
+
+step '●プレイヤー :id が相互通商条約の提案を受けている' do |id|
+  l = Letter.find_by(opp_id: id, ltype: "treaty_of_commerce")
+  expect(l).to be_truthy
+end
+
 step '●プレイヤー :id が送金されている' do |id|
   l = Letter.find_by(opp_id: id, ltype: "send_money")
   expect(l).to be_truthy

@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150125100952) do
     t.integer  "opp_id"
     t.text     "text"
     t.boolean  "read",       default: false
+    t.boolean  "accepted"
     t.string   "ltype"
     t.datetime "created_at"
     t.datetime "updated_at"
