@@ -64,6 +64,23 @@ step ":space に :value を入力" do |space,value|
   fill_in space, with: value
 end
 
+step "メニューから :text を選択" do |text|
+  select text
+end
+
+step "メニュー :name から :text を選択" do |name,text|
+  select text, from: name
+end
+
+step "メニュー :name からプレイヤー :id の国を選択" do |name,id|
+  text = Player.find(id).country.name
+  select text, from: name
+end
+
+step "ラジオボタンから :text を選択" do |text|
+  choose text
+end
+
 step "資金が :value である" do |value|
   within("span.money") do
     expect(page).to have_content(value)
@@ -86,4 +103,12 @@ step 'ログインする' do
   fill_in 'user_password', with: 'abcabcabc'
   send ":text ボタンをクリック", "Log in"
   send ":text と表示されない", "Log in"
+end
+
+step "pending" do
+  pending "あとでやる"
+end
+
+step "p :text" do |text|
+  p eval(text)
 end

@@ -1,0 +1,43 @@
+H1 書簡
+=link_to "書簡を作成", :new_letter
+br
+=link_to "戻る", :root
+
+table border=1
+  tr
+    th
+    th 文明
+    th 内容
+    th 日時
+    th 
+  - @letters.each do |letter,country|
+    tr class="#{letter.given_or_sent(@player)}"
+      td
+        - unless letter.read
+          | new
+      td 
+        - if letter.your_letter?(@player)
+          | to #{country}
+        - else
+          | from #{country}
+      td =link_to letter.converted_subject, letter_path(letter)
+      td #{letter.created_at}
+      td
+        - if !letter.your_letter?(@player)
+          - if letter.treaty?
+            - if letter.read
+              | #{letter.accepted_j}
+            - else
+              =link_to "受諾 ", accept_letter_path(letter), method: :post
+              =link_to "拒否", reject_letter_path(letter), method: :post
+          - elsif letter.l_present?
+            - if letter.read
+              | 受け取り済み
+            - else
+              = link_to "受け取る", open_present_letter_path(letter), method: :post
+        - else
+          - if letter.treaty?
+            - if letter.read
+              | #{letter.accepted_j}
+            - else
+              | 受諾待ち

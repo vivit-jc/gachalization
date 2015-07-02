@@ -44,9 +44,11 @@ ActiveRecord::Schema.define(version: 20150125100952) do
   create_table "letters", force: true do |t|
     t.integer  "player_id"
     t.integer  "opp_id"
+    t.string   "subject"
     t.text     "text"
-    t.boolean  "read"
-    t.boolean  "treaty"
+    t.boolean  "read",       default: false
+    t.boolean  "accepted"
+    t.string   "ltype"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

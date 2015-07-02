@@ -24,10 +24,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'slim-rails'
-
 gem 'twitter-bootstrap-rails'
-
 gem 'devise'
+gem 'squeel'
+
 
 group :production do
   gem 'mysql2'

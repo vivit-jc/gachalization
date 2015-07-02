@@ -10,9 +10,10 @@ div class="sidebar"
   br
   i =country_comment(@player.country)
   br
+  =link_to "トップ ", :root
   =link_to "交易 ", :trades
   =link_to "文明 ", :countries
-  =link_to "書簡 ", :root
+  =link_to "書簡 ", :letters
   br
   | 内政力: #{@player.management.pt}/#{@player.management.actual_max}(最大#{@player.management.max},ダメージ#{@player.management.damage})
   br
