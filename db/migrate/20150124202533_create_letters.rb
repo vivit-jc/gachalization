@@ -3,6 +3,7 @@ class CreateLetters < ActiveRecord::Migration
     create_table :letters do |t|
       t.integer :player_id
       t.integer :opp_id
+      t.string :subject
       t.text :text
       t.boolean :read, default: false
       t.boolean :accepted

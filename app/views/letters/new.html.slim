@@ -11,6 +11,9 @@ H1 書簡作成
     span カード
     = select_tag :card_id, options_for_select(@cards)
   div
+    span タイトル(条約の名前)
+    = text_field_tag :title
+  div
     p 内容
     = text_area_tag :text, "", size: "70x6"
   div

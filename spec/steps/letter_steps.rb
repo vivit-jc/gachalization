@@ -31,6 +31,12 @@ step '●プレイヤー :id が相互通商条約の提案を受けている' d
   expect(l).to be_truthy
 end
 
+step '●プレイヤー :id と :name を締結している' do |id, name|
+  l = Treaty.find_by(player_id: 1, opp_id: id, name: name, commerce: nil)
+  l = Treaty.find_by(player_id: id, opp_id: 1, name: name, commerce: nil) unless(l)
+  expect(l).to be_truthy
+end
+
 step '●プレイヤー :id が送金されている' do |id|
   l = Letter.find_by(opp_id: id, ltype: "send_money")
   expect(l).to be_truthy

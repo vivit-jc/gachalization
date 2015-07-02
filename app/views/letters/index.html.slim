@@ -20,7 +20,7 @@ table border=1
           | to #{country}
         - else
           | from #{country}
-      td #{letter.converted_text}
+      td =link_to letter.converted_subject, letter_path(letter)
       td #{letter.created_at}
       td
         - if !letter.your_letter?(@player)
@@ -32,7 +32,7 @@ table border=1
               =link_to "拒否", reject_letter_path(letter), method: :post
           - elsif letter.l_present?
             - if letter.read
-              | "受け取り済み"
+              | 受け取り済み
             - else
               = link_to "受け取る", open_present_letter_path(letter), method: :post
         - else
@@ -40,4 +40,4 @@ table border=1
             - if letter.read
               | #{letter.accepted_j}
             - else
-              | "受諾待ち"
+              | 受諾待ち

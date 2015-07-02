@@ -2,13 +2,13 @@
 
 class Letter < ActiveRecord::Base
 
-  def converted_text
-    text = self.text
+  def converted_subject
+    subject = self.subject
     case(self.ltype)
     when "letter"
-      text
+      subject
     when "treaty"
-      "条約「#{text}」の提案"
+      "条約「#{subject}」の提案"
     when "treaty_of_commerce"
       "相互通商条約の提案"
     when "send_money"
